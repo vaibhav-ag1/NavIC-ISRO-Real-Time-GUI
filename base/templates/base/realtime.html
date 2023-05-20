@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Real Time Maps</title>
+	
+	<link rel="icon"  href="{% static 'images/isrofavicon.ico' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="usp-banner" role="complementary">
+		<ul class="uspBannerList">
+		  <li class="uspBannerList">This site is powered by ISRO,Department of Space</li>
+		  <li class="uspBannerList">Government of India</li>
+		</ul>
+	  </div>
+	  <div class="header">
+		<div class="headersection">
+		<img src="{% static 'images/isroBannerG20.png.webp' %}" alt="isrologo" class="logo">
+	  </div>
+	  </div>
+	  <div class="topnav" id="myTopnav">
+		<a href="{% url 'index' %}">Home</a>
+		<a href="{% url 'realtime' %}">Real-time</a>
+		<a href="{% url 'team' %}">Team</a>
+		<a href="">Contact</a>
+	<div class="card-wrapper">
+    <div id="map"></div>
+<script>
+    const lat=["31.398963"," 31.397520", "31.395623","31.394099","31.392289","31.390439","31.388194","31.385469","31.383460",
+    "31.381761", "31.379568","31.376349", "31.372351","31.368396", "31.365162","31.361366", "31.360302","31.360411","31.356384", "31.356159"];
+    const long=["75.535578", "75.534767", "75.534232","75.532946", "75.534515"," 75.536035", "75.538000"," 75.540336", "75.542038","75.543479"," 75.545313",
+    "75.548107","75.551458","75.555286","75.558056","75.561615","75.560084","75.552689","75.554941","75.556776"];
+    let i=0;
+	
+    setInterval(function() {
+        i++;
+        map.innerHTML = '<iframe width="1100" height="580" src="https://maps.google.com/maps?q='+lat[i]+','+long[i]+'&amp;z=15&amp;output=embed"></iframe>';
+      }, 3000);
+</script>
+</div>
+	
+</body>
+</html>

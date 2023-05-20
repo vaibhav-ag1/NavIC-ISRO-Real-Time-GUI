@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NavIC-ISRO Maps</title>
+	
+	<link rel="icon"  href="{% static 'images/isrofavicon.ico' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="usp-banner" role="complementary">
+		<ul class="uspBannerList">
+		  <li class="uspBannerList">This site is powered by ISRO,Department of Space</li>
+		  <li class="uspBannerList">Government of India</li>
+		</ul>
+	  </div>
+	  <div class="header">
+		<div class="headersection">
+		<img src="{% static 'images/isroBannerG20.png.webp' %}" alt="isrologo" class="logo">
+	  </div>
+	  </div>
+	  <div class="topnav" id="myTopnav">
+		<a href="{% url 'index' %}">Home</a>
+		<a href="{% url 'realtime' %}">Real-time</a>
+		<a href="{% url 'team' %}">Team</a>
+		<a href="coop.html">Contact</a>
+	  </div>
+		<div style="text-align: center;"><h5>latitude</h5>{{x}}<br>
+			<h5>longitude</h5>{{y}}
+	  </div>
+	<div class="card-wrapper">
+    <div id="map"></div>
+	
+
+<script>
+	var latitude='{{x}}'
+	var longitude='{{y}}'
+	map.innerHTML = '<iframe width="1100" height="580" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
+</script>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Team Members</title>
+	
+	<link rel="icon"  href="{% static 'images/isrofavicon.ico' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<title>Teacher and Students</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f9f9f9;
+			color: #333;
+		}
+		h1, h2 {
+			text-align: center;
+			margin: 20px 0;
+			color: #c0392b;
+			text-shadow: 1px 1px 2px #ccc;
+		}
+		#teacher-photo {
+			display: block;
+			margin: 20px auto;
+			border-radius: 50%;
+			box-shadow: 0px 0px 10px #888;
+		}
+		#students {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		#students li {
+			margin: 10px 0;
+			padding: 10px;
+			background-color: #ecf0f1;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px #888;
+			position: relative;
+		}
+		#students li:before {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			height: 20px;
+			width: 20px;
+			background-color: #ecf0f1;
+			border-radius: 50%;
+			box-shadow: 0px 0px 5px #888;
+		}
+		#students li:after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: -10px;
+			height: 20px;
+			width: 20px;
+			background-color: #ecf0f1;
+			border-radius: 50%;
+			box-shadow: 0px 0px 5px #888;
+		}
+		#students li:nth-child(odd):before {
+			transform: translateX(-50%) rotate(45deg);
+		}
+		#students li:nth-child(even):before {
+			transform: translateX(50%) rotate(45deg);
+		}
+		#students li:nth-child(odd):after {
+			transform: translateY(50%) rotate(45deg);
+		}
+		#students li:nth-child(even):after {
+			transform: translateY(-50%) rotate(45deg);
+		}
+		#teacher-name {
+			text-align: center;
+			font-size: 1.5em;
+			margin-top: 20px;
+			color: #2c3e50;
+			text-shadow: 1px 1px 2px #ccc;
+		}
+	</style>
+</head>
+<body>
+    <div class="usp-banner" role="complementary">
+		<ul class="uspBannerList">
+		  <li class="uspBannerList">This site is powered by ISRO,Department of Space</li>
+		  <li class="uspBannerList">Government of India</li>
+		</ul>
+	  </div>
+	  <div class="header">
+		<div class="headersection">
+		<img src="{% static 'images/isroBannerG20.png.webp' %}" alt="isrologo" class="logo">
+	  </div>
+	  </div>
+	  <div class="topnav" id="myTopnav">
+		<a href="{% url 'index' %}">Home</a>
+		<a href="{% url 'realtime' %}">Real-time</a>
+		<a href="{% url 'team' %}">Team</a>
+		<a href="">Contact</a>
+		<h1>Faculty and Students</h1>
+	<img id="teacher-photo" src="https://www.nitj.ac.in/ece/images/faculty/sateesh.jpg" alt="Teacher's Photo" width="200px">
+	<div id="teacher-name">
+		<p>Mentor: Dr. Sateesh Kumar Awasthi</p>
+	</div>
+	<h2>Team:</h2>
+	<ul id="students">
+		<li>Member 1: Vaibhav Agarwal (Roll Number: 20104114)</li>
+		<li>Member 2: Divya Gupta (Roll Number: 20104030)</li>
+		<li>Member 3: Daksh Khatkar (Roll Number: 20104026)</li>
+	</ul>
+</body>
+</html>
